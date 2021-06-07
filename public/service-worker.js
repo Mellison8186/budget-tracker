@@ -57,27 +57,18 @@ if (e.request.url.includes("/api/")) {
     )
     return
 }
-    e.respondWith(
-        fetch(e.request).catch(function(){
-            return caches.match(e.request).then(function (response) {
+
+        e.respondWith(
+            fetch(e.request).catch(function() {
+              return caches.match(e.request).then(function(response) {
                 if (response) {
-                    return resposne
-                } else {
-                    return caches.match
+                  return response;
+                } else if (e.request.headers.get("accept").includes("text/html")) {
+                  // return the cached home page for all requests for html pages
+                  return caches.match("/");
                 }
+              });
             })
-        })
-    //     if (request) { // if cache is available, respond with cache
-    //       console.log('responding with cache : ' + e.request.url)
-    //       return request
-    //     } else {       // if there are no cache, try fetching request
-    //       console.log('file is not cached, fetching : ' + e.request.url)
-    //       return fetch(e.request)
-    //     }
-  
-    //     // You can omit if/else for console.log & put one line below like this too.
-    //     // return request || fetch(e.request)
-    //   })
-    // )
+          
 )}
 )
