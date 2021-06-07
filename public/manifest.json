@@ -1,6 +1,6 @@
 {
-    "name": "Food Event",
-    "short_name": "Foodies",
+    "name": "Budget Tracker",
+    "short_name": "Budgeting",
     "background_color": "#01579b",
     "theme_color": "#ffffff",
     "start_url": "../index.html",

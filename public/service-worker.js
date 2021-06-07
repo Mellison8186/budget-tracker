@@ -57,7 +57,6 @@ if (e.request.url.includes("/api/")) {
     )
     return
 }
-
         e.respondWith(
             fetch(e.request).catch(function() {
               return caches.match(e.request).then(function(response) {
@@ -71,4 +70,4 @@ if (e.request.url.includes("/api/")) {
             })
           
 )}
-)
+);
