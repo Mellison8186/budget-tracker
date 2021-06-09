@@ -1,6 +1,5 @@
-//create variable to hold db connection
+
 let db;
-//establish a connection to IndexedDB database called 'budget_tracker' and set it to 1
 const request = indexedDB.open('budget_tracker', 1);
 
 // this event will emit if the database version changes
@@ -8,7 +7,7 @@ request.onupgradeneeded = function(event) {
     //save a reference to the db
     const db = event.target.result;
     //create an object store (table) called `new_amount`, set it to have an autoincrementing primary key of sorts
-    db.createObjectStore(`new_amount`, { autoIncrement: true});
+    db.createObjectStore('new_amount', { autoIncrement: true});
 };
 
 //upon success
