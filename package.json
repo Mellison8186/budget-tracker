@@ -1,7 +1,7 @@
 {
   "name": "budget-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Purpose The budget tracker app allows users to keep track of their incoming and outgoing expenses. This will help provide a visual of the amount of money that is available. It's capable of being downloaded and used on or offline.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,8 +21,8 @@
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
-    "mongodb": "^3.6.9",
-    "mongoose": "^5.5.15",
+    "mongodb": "3.6",
+    "mongoose": "^5.13.21",
     "morgan": "^1.9.1"
   }
 }
