@@ -15,7 +15,7 @@ The budget tracker app allows users to keep track of their incoming and outgoing
 * Heroku
 
 ## Website
-https://polar-journey-21019.herokuapp.com/
+https://budget-tracker-rust.vercel.app/
 
 ## Contribution
 * Maribel Ellison

@@ -1,9 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const compression = require("compression");
-
-const PORT = process.env.PORT || 3001;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://mellison8186:Sno4T2haT1ZlU0hjbzlEcA%3D%3D@cluster0.l3goa2z.mongodb.net/?retryWrites=true&w=majority";
+require('dotenv').config();
 
 const app = express();
 
@@ -13,15 +11,21 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
+mongoose.connect(process.env.DB_URI, {
+  dbName: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  pass:process.env.DB_PASS
+})
+.then(() => {
+  console.log('Victory is mine!');
+})
+.catch((err) => {
+  console.log(err.message)
 });
 
 // routes
 app.use(require("./routes/api.js"));
 
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+app.listen(3000, () => {
+  console.log(`App running on port 3000!`);
 });
